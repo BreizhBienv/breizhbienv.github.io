@@ -1,4 +1,9 @@
 ---
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 interface Props {
   title?: string;
 }
@@ -13,21 +18,9 @@ const { title } = Astro.props as Props;
     )}
 
     <div class="max-w-3xl mx-auto text-lg text-[color:var(--color-text-secondary)]">
-        <p>
-            Bonjour ! Je suis programmeur gameplay, j'aime développer des IA en tout genre et concevoir des architectures robustes et scalables.
-        </p>
-        <p>
-            Ma polyvalence me permet de travailler sur tous les niveaux d'un jeu : architecture, gameplay, outils, optimisation, intégration d'assets.
-            Il est important pour moi de garder un code clair et bien structuré pour que mes collègues puissent le comprendre, le modifier et l'utiliser facilement.
-        </p>
-        <p>
-            J'ai récemment travaillé sur un jeu de cartes sur le football où les diverses tâches réalisées m'ont permis d'élargir mon arsenal de compétences.
-            Je poursuis également un projet de recherche que j'ai entamé à ISART Digital portant sur la simulation réaliste de foules sur Unreal Engine 5.
-        </p>
-        <p>
-            Je porte un intérêt particulier à la génération procédurale et, plus largement, aux algorithmes. <br/>
-            Je suis toujours heureux d'en apprendre plus sur les métiers des personnes avec qui je travaille.
-        </p>
+        <p>{t('about.p1')}</p>
+        <p>{t('about.p2')}</p>
+        <p>{t('about.p3')}</p>
     </div>
   </div>
 </section>

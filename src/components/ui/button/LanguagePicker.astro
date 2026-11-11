@@ -1,0 +1,17 @@
+---
+import { languages, getLangFromUrl, getAlternatePath, type Lang } from '../../../i18n/utils';
+
+const current = getLangFromUrl(Astro.url);
+const other: Lang = current === "fr" ? "en" : "fr";
+---
+
+<a
+  href={getAlternatePath(Astro.url, other)}
+  hreflang={other}
+  lang={other}
+  title={languages[other]}
+  aria-label={`Switch to ${languages[other]}`}
+  class="text-sm font-semibold"
+>
+  {current.toUpperCase()}
+</a>

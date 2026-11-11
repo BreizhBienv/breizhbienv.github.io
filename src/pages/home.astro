@@ -1,0 +1,81 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/sections/Footer.astro';
+import Header from '../components/sections/Header.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import SkillsSection from '../components/sections/SkillsSection.astro';
+import WorkExperience from '../components/sections/WorkExperience.astro';
+import Education from '../components/sections/Education.astro';
+import ArrowSeparator from '../components/ui/separator/ArrowSeparator.astro';
+import GlowLineSeparator from '../components/ui/separator/GlowLineSeparator.astro';
+import AboutMe from '@/components/sections/AboutMe.astro';
+import Projects from '@/components/sections/Projects.astro';
+
+import { SITE_TITLE } from '../consts';
+import { work as workFr } from '../data/work.fr';
+import { work as workEn } from '../data/work.en';
+import { skills as skillsFr } from '../data/skills.fr';
+import { skills as skillsEn } from '../data/skills.en';
+import { education as educationFr } from '../data/education.fr';
+import { education as educationEn } from '../data/education.en';
+
+import CV_FR from '../assets/pdf/CV_FR.pdf';
+import CV_EN from '../assets/pdf/CV_EN.pdf';
+
+import { useTranslations, localizedPath, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const CV = lang === 'en' ? CV_EN : CV_FR;
+const work = lang === 'en' ? workEn : workFr;
+const skills = lang === 'en' ? skillsEn : skillsFr;
+const education = lang === 'en' ? educationEn : educationFr;
+---
+
+<!doctype html>
+<html lang={lang} data-theme="dark" class="dark">
+  <head>
+    <BaseHead title={SITE_TITLE} description={t('portfolio.description')} />
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Gauthier BIENVENU Portfolio',
+      url: new URL(localizedPath('/', lang), Astro.site).toString(),
+      sameAs: [
+        'https://github.com/breizhbienv',
+        'https://www.linkedin.com/in/gauthier-bienvenu/',
+      ],
+    })} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <HeroSection
+        title="Gauthier BIENVENU"
+        subtitle={t('home.subtitle')}
+        showCTA
+        secondaryCTA={{ text: t('home.cv'), href: CV }}
+      />
+
+      <section class="py-6">
+        <GlowLineSeparator />
+        <AboutMe title={t('home.section.about')} />
+        <ArrowSeparator />
+        <WorkExperience title={t('home.section.work')} items={work} />
+        <ArrowSeparator />
+        <Projects title={t('home.section.projects')} />
+        <ArrowSeparator />
+        <SkillsSection title={t('home.sections.skills')} skills={skills} />
+        <ArrowSeparator />
+        <Education title={t('home.section.education')} items={education} />
+        <GlowLineSeparator />
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

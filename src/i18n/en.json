@@ -1,0 +1,24 @@
+{
+  "portfolio.description": "Education, work experience, skills et projects.",
+
+  "home.subtitle": "Game programmer",
+  "home.cv": "Resume",
+  "home.section.about": "About me",
+  "home.section.work": "Work experience",
+  "home.section.projects": "Projects",
+  "home.sections.skills": "Skills & Tools",
+  "home.section.education": "Education",
+
+  "header.home": "Home",
+  "header.about": "About",
+  "header.work": "Experience",
+  "header.projects": "Projects",
+  "header.contact": "Contact",
+
+  "about.p1": "Hello! I'm a game programmer. I enjoy developing all kinds of AI and designing robust, scalable architectures. AI, procedural generation, and more broadly, algorithms are also areas I love to explore.",
+  "about.p2": "My versatility allows me to work on every level of a game: architecture, gameplay, tools, optimisation, and asset integration. My philosophy is to keep my code clean and well-structured so that my colleagues can easily understand, modify, and use it. Learning about their disciplines is also something I like to do, it helps me design tools and systems that fit their needs.",
+  "about.p3": "I recently worked on One Touch, a football-themed TCG, where the different tasks I handled there helped me broaden my skills. I am currently also working on a research project I started at ISART Digital about realistic crowd simulation in Unreal Engine 5.",
+
+  "footer.title": "Get in touch!",
+  "footer.subTitle": "Whether it's for a project, an opportunity or just to chat, feel free to reach out."
+}

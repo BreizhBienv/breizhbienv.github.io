@@ -1,4 +1,4 @@
-export const studies = [
+export const education = [
   {
     title: 
       "Game Programming",
@@ -18,5 +18,5 @@ export const studies = [
   },
 ];
 
-export type StudyItem = (typeof studies)[number];
+export type EducationItem = (typeof education)[number];
 

@@ -1,0 +1,24 @@
+{
+  "portfolio.description": "Formation, expériences pro, compétences et projets personnels.",
+
+  "home.subtitle": "Programmeur en jeu vidéo",
+  "home.cv": "Curriculum Vitae",
+  "home.section.about": "À propos de moi",
+  "home.section.work": "Expérience professionnelle",
+  "home.section.projects": "Projets",
+  "home.sections.skills": "Compétences & Outils",
+  "home.section.education": "Formation",
+
+  "header.home": "Accueil",
+  "header.about": "À propos",
+  "header.work": "Expérience",
+  "header.projects": "Projets",
+  "header.contact": "Contact",
+
+  "about.p1": "Bonjour ! Je suis programmeur en jeu vidéo. J'aime développer des IA en tout genre et concevoir des architectures robustes et scalables. L'IA, la génération procédurale, et les algorithmes plus en général, sont aussi des terrains que j’aime explorer.",
+  "about.p2": "Ma polyvalence me permet de travailler sur tous les niveaux d'un jeu : architecture, gameplay, outils, optimisation, intégration d'assets. Ma philosophie est de garder un code clair et bien structuré pour que mes collègues puissent le comprendre, le modifier et l'utiliser facilement. J’aime aussi apprendre de leurs métiers, cela m’aide à concevoir des outils et des systèmes adaptés à leurs besoins.",
+  "about.p3": "J'ai récemment travaillé sur One Touch, un TCG dans le thème du football, où les diverses tâches réalisées m'ont permis d'élargir mon arsenal de compétences. Je poursuis également un projet de recherche que j'ai entamé à ISART Digital portant sur la simulation réaliste de foules sur Unreal Engine 5.",
+
+  "footer.title": "Contactez-moi !",
+  "footer.subTitle": "Que ce soit pour un projet, une opportunité ou juste pour discuter : n'hésitez pas."
+}

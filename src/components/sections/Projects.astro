@@ -1,12 +1,19 @@
 ---
 import Button from "../ui/button/Button.astro";
-import { projects } from "../../data/projects";
+import { projects as projectsFr } from "../../data/projects.fr";
+import { projects as projectsEn } from "../../data/projects.en";
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 interface Props {
   title?: string;
 }
 
 const { title } = Astro.props as Props;
+
+const projects = lang === 'en' ? projectsEn : projectsFr;
 ---
 
 <section id="projects" class="w-full py-10">

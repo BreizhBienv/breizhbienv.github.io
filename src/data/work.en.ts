@@ -14,7 +14,7 @@ export const work = [
     title: "Gameplay Programmer",
     company: "FromTheFrench",
     region: "Paris, France",
-    description: "Developpement d'un jeu de cartes à collectioner sur mobile portant sur le thème du football. Conception de l'architecture des systèmes du jeu, de son IA, de la logique de jeu et réseau ainsi que l'intégration d'assets UI et SFX",
+    description: "Developed a football-themed mobile TCG (Trading Card Game). Designed the game's systems architecture, AI, game logic, network logic, and integrated UI and SFX assets.",
     technologies: [
       "Unity 6",
       "C#",
@@ -30,11 +30,11 @@ export const work = [
     title: "Gameplay Programmer",
     company: "UNDEAD Battery",
     region: "France",
-    description: "Developpement d'un leaderboard et d'un replay pour le mode course du jeu de simulation de drone TRYP FPV.",
+    description: "Developed a leaderboard and a replay system in the race mode of TRYP FPV, a drone simulation game.",
     technologies: [
       "Unreal Engine 5",
       "C++ & Blueprint",
-      "API Steam",
+      "Steam API",
       "Perforce"
     ],
   },

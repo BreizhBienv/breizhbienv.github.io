@@ -9,13 +9,12 @@ interface SocialItem {
 
 interface Props {
   items: SocialItem[];
-  show?: string[];
   size?: "sm" | "md" | "lg" | "xl";
   hideOnMobile?: boolean;
   itemsGap?: string;
 }
 
-const { items, show, size = "md", hideOnMobile = false, itemsGap = "gap-3" } = Astro.props as Props;
+const { items, size = "md", hideOnMobile = false, itemsGap = "gap-3" } = Astro.props as Props;
 
 const sizes = {
   sm: "h-6 w-6",
@@ -25,16 +24,10 @@ const sizes = {
 };
 
 const containerVisibility = hideOnMobile ? "hidden md:flex" : "flex";
-
-const visibleItems = show
-  ? show
-      .map((id) => items.find((item) => item.id === id))
-      .filter((item): item is SocialItem => Boolean(item))
-  : items;
 ---
 
 <div class={`${containerVisibility} flex-wrap justify-center items-center ${itemsGap}`}>
-  {visibleItems.map((social) => {
+  {items.map((social) => {
     const external = social.href.startsWith("http");
     return (
       <a
