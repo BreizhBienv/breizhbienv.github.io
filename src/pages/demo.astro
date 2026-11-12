@@ -7,7 +7,7 @@ import Footer from "../components/sections/Footer.astro";
 import HeroSection from "../components/sections/HeroSection.astro";
 import SkillsSection from "../components/sections/SkillsSection.astro";
 import WorkExperience from "../components/sections/WorkExperience.astro";
-import Studies from "../components/sections/Studies.astro";
+import Educations from "../components/sections/Education.astro";
 import ProjectsSection from "../components/sections/Projects.astro";
 
 // UI components
@@ -19,7 +19,6 @@ import PostCard from "../components/ui/card/PostCard.astro";
 import Carousel from "../components/ui/carousel/Carousel.astro";
 import PostMeta from "../components/ui/meta/PostMeta.astro";
 import PostNav from "../components/ui/nav/PostNav.astro";
-import BlogPagination from "../components/ui/nav/BlogPagination.astro";
 import ArrowSeparator from "../components/ui/separator/ArrowSeparator.astro";
 import GlowLineSeparator from "../components/ui/separator/GlowLineSeparator.astro";
 import ShareButtons from "../components/ui/share/ShareButtons.astro";
@@ -27,9 +26,11 @@ import Timeline from "../components/ui/timeline/Timeline.astro";
 
 // Data
 import { logos } from "../data/logos";
-import { skills } from "../data/skills";
-import { work, workIcons } from "../data/work";
-import { studies } from "../data/studies";
+import { skills } from "../data/skills.fr";
+import { work } from "../data/work.fr";
+import { education } from "../data/education.fr";
+
+import { workIcons } from "@/consts";
 
 // Content
 import { getCollection } from 'astro:content';
@@ -144,7 +145,6 @@ const [firstPost, secondPost, thirdPost] = posts.slice(0, 3);
           <PostMeta pubDate={firstPost.data.pubDate} readingTimeMin={5} authorName={firstPost.data.author} />
           <PostNav prev={secondPost && { id: secondPost.id, title: secondPost.data.title }} next={thirdPost && { id: thirdPost.id, title: thirdPost.data.title }} />
           <ShareButtons title={firstPost.data.title} url={Astro.url.toString()} />
-          <BlogPagination currentPage={2} totalPages={5} />
         </section>
       )}
 
@@ -152,7 +152,7 @@ const [firstPost, secondPost, thirdPost] = posts.slice(0, 3);
       <section class="space-y-6">
         <SkillsSection title="Skills & Tools" skills={skills} />
         <WorkExperience title="Work Experience" items={work} />
-        <Studies title="Studies" items={studies} />
+        <Educations title="Studies" items={education} />
         <ProjectsSection title="Projects" />
       </section>
     </main>
