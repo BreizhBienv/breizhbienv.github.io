@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content';
 import rss from '@astrojs/rss';
 import { SITE_TITLE } from '../consts';
 
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
