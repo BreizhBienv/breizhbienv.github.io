@@ -32,3 +32,12 @@ export function localizedPath(path: string, lang: Lang): string {
   if (lang === defaultLang) return clean;
   return clean === "/" ? "/en/" : `/en${clean}`;
 }
+
+/** URL de la même page dans une autre langue (simple échange de préfixe) */
+export function getAlternatePath(url: URL, targetLang: Lang): string {
+  const current = getLangFromUrl(url);
+  let path = url.pathname;
+  if (current === "en") path = path.replace(/^\/en/, "") || "/";
+  if (targetLang === "en") return path === "/" ? "/en/" : `/en${path}`;
+  return path;
+}
