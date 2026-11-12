@@ -22,12 +22,9 @@ import { education as educationEn } from '../data/education.en';
 import CV_FR from '../assets/pdf/CV_FR.pdf';
 import CV_EN from '../assets/pdf/CV_EN.pdf';
 
-import { useTranslations, localizedPath, type Lang } from '../i18n/utils';
+import { useTranslations, localizedPath, getLangFromUrl } from '../i18n/utils';
 
-interface Props {
-  lang: Lang;
-}
-const { lang } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const CV = lang === 'en' ? CV_EN : CV_FR;

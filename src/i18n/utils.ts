@@ -19,9 +19,10 @@ export function getLangFromUrl(url: URL): Lang {
 }
 
 /** Retourne la fonction t("cle") pour une langue donnée (repli sur le français) */
-export function useTranslations(lang: Lang) {
+export function useTranslations(lang?: string) {
+  const dict = translations[lang as Lang] ?? translations[defaultLang];
   return function t(key: TranslationKey): string {
-    return translations[lang][key] ?? translations[defaultLang][key];
+    return dict[key] ?? translations[defaultLang][key];
   };
 }
 
@@ -30,13 +31,4 @@ export function localizedPath(path: string, lang: Lang): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
   if (lang === defaultLang) return clean;
   return clean === "/" ? "/en/" : `/en${clean}`;
-}
-
-/** URL de la même page dans une autre langue (simple échange de préfixe) */
-export function getAlternatePath(url: URL, targetLang: Lang): string {
-  const current = getLangFromUrl(url);
-  let path = url.pathname;
-  if (current === "en") path = path.replace(/^\/en/, "") || "/";
-  if (targetLang === "en") return path === "/" ? "/en/" : `/en${path}`;
-  return path;
 }
